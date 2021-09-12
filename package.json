@@ -1,0 +1,20 @@
+{
+  "name": "nodejs-with-docker-experiment",
+  "version": "1.0.0",
+  "description": "This is my experiment to developing with docker using Oracle database and Node JS containers.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/demasy/nodejs-with-docker-experiment.git"
+  },
+  "keywords": [],
+  "author": "Ahmed El-Demasy <ceo@egyptianprogrammers.com> (https://github.com/demasy)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/demasy/nodejs-with-docker-experiment/issues"
+  },
+  "homepage": "https://github.com/demasy/nodejs-with-docker-experiment#readme"
+}
