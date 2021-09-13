@@ -26,3 +26,58 @@ async function startup() {
 }
 
 startup();
+
+
+
+async function shutdown(e) {
+  let err = e;
+
+  console.log('Shutting down application');
+
+  try {
+    console.log('Closing web server module');
+
+    await webServer.close();
+  } catch (e) {
+    console.error(e);
+
+    err = err || e;
+  }
+
+  try {
+    console.log('Closing database module');
+
+    await database.close();
+  } catch (e) {
+    console.error(e);
+
+    err = err || e;
+  }
+
+  console.log('Exiting process');
+
+  if (err) {
+    process.exit(1); // Non-zero failure code
+  } else {
+    process.exit(0);
+  }
+}
+
+process.once('SIGTERM', () => {
+  console.log('Received SIGTERM');
+
+  shutdown();
+});
+
+process.once('SIGINT', () => {
+  console.log('Received SIGINT');
+
+  shutdown();
+});
+
+process.once('uncaughtException', err => {
+  console.log('Uncaught exception');
+  console.error(err);
+
+  shutdown(err);
+});

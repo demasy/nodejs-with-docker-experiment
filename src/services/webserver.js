@@ -25,3 +25,16 @@ function initialize() {
 }
 
 module.exports.initialize = initialize;
+
+
+module.exports.close = ()=> {
+    return new Promise((resolve, reject) => {
+      httpServer.close((err) => {
+        if (err) {
+          reject(err);
+          return;
+        }
+        resolve();
+      });
+    });
+  }
