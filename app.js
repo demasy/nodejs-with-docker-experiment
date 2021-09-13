@@ -1,7 +1,5 @@
 const webServer = require('./src/services/webserver.js');
 
-// const webServerConfig = require('../config/web-server.js');
-
 async function startup() {
   console.log('Starting application');
 
@@ -15,6 +13,5 @@ async function startup() {
     process.exit(1); // Non-zero failure code
   }
 }
-
 
 startup();
