@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/demasy/nodejs-with-docker-experiment/issues"
   },
-  "homepage": "https://github.com/demasy/nodejs-with-docker-experiment#readme"
+  "homepage": "https://github.com/demasy/nodejs-with-docker-experiment#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
