@@ -1,5 +1,5 @@
 const oracledb = require('oracledb');
-const {sysConfig} = require('../config/database.js');
+const {config} = require('../config/database.js');
 
 if (process.platform === 'darwin') {
     oracledb.initOracleClient({ libDir: process.env.HOME + '/Downloads/instantclient_19_8' });
@@ -8,7 +8,7 @@ if (process.platform === 'darwin') {
 }
 
 module.exports.initialize = async () => {
-    await oracledb.createPool(sysConfig);
+    await oracledb.createPool(config);
 }
 
 module.exports.close = async () => {
