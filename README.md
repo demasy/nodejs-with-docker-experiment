@@ -1,5 +1,5 @@
 # NodeJS with Docker Experiment
-This is my experiment to developing with docker using Oracle database and Node JS containers.
+This is my experiment to developing with docker using Oracle database and NodeJS containers.
 
 <br>
 
