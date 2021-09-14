@@ -1,17 +1,10 @@
 const oracledb = require('oracledb');
 
 module.exports.config = {
-    user: process.env.database_user || 'demasy',
-    password: process.env.database_password || 'demasy',
-    connectString: process.env.database_connect_string || 'localhost:1521/ORCLCDB.localdomain',
-    poolMin: process.env.database_pool_min || 5,
-    poolMax: process.env.database_pool_max || 5,
-    poolIncrement: process.env.database_pool_increment || 0
+    user: process.env.DEMASY_DATABASE_USER || 'demasy',
+    password: process.env.DEMASY_DATABASE_PASSWORD || 'demasy',
+    connectString: process.env.DEMASY_DATABASE_CONNECT_STRING || 'localhost:1521/ORCLCDB.localdomain',
+    poolMin: process.env.DEMASY_DATABASE_POOL_MIN || 5,
+    poolMax: process.env.DEMASY_DATABASE_POOL_MAX || 5,
+    poolIncrement: process.env.DEMASY_DATABASE_POOL_INCREMENT || 0
 };
-
-// module.exports.sysConfig = {
-//     user: process.env.database_user || 'sys',
-//     password: process.env.database_password || 'Oradoc_db1',
-//     connectString: process.env.database_connect_string || 'localhost:1521/ORCLCDB.localdomain',
-//     privilege: process.env.privilege || oracledb.SYSDBA
-// };
