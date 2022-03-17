@@ -1,11 +1,17 @@
 const oracledb = require('oracledb');
-const {config} = require('../config/database.js');
+const { config, client } = require('../config/database.js');
 
-if (process.platform === 'darwin') {
-    oracledb.initOracleClient({ libDir: process.env.HOME + '/Downloads/instantclient_19_8' });
-} else if (process.platform === 'win32') {
-    oracledb.initOracleClient({ libDir: 'C:\\oracle\\instantclient_19_8' });
-}
+// if (process.platform === 'darwin') {
+//     oracledb.initOracleClient({ libDir: process.env.HOME + '/Downloads/instantclient_19_8' });
+// } else if (process.platform === 'win32') {
+//     oracledb.initOracleClient({ libDir: 'C:\\oracle\\instantclient_19_8' });
+// }
+
+let instantClient = client();
+
+console.log("instantClient=> " + instantClient);
+
+oracledb.initOracleClient({ libDir: instantClient });
 
 module.exports.initialize = async () => {
     await oracledb.createPool(config);

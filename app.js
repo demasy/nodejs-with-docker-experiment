@@ -27,8 +27,6 @@ async function startup() {
 
 startup();
 
-
-
 async function shutdown(e) {
   let err = e;
 
