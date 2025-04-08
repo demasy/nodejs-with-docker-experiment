@@ -21,7 +21,7 @@ ENV DEMASY_DATABASE_USER=demasy \
     DEMASY_DATABASE_POOL_INCREMENT=0 \
     DEMASY_DATABASE_CLIENT="/home/demasy/app/libs/oracle/instantclient_19_12"
 
-LABEL maintainer "Ahmed El-Demasy <ceo@egyptianprogrammers.com>"
+LABEL maintainer "Ahmed El-Demasy <founder@demasy.io>"
 
 RUN mkdir -p /home/demasy/app
 
